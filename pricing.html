@@ -122,6 +122,44 @@
         .rupee-symbol {
             font-family: Arial, sans-serif;
         }
+
+        .software-filter {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+        }
+
+        .filter-btn {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            padding: 12px 25px;
+            margin: 5px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .filter-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: white;
+        }
+
+        .filter-btn.active {
+            background: white;
+            color: var(--primary-purple);
+            border-color: white;
+        }
+
+        .pricing-plans {
+            transition: all 0.3s ease;
+        }
+
+        .pricing-plans.hide {
+            display: none;
+        }
     </style>
 </head>
 
@@ -165,122 +203,331 @@
         <div class="pricing-container">
             <div class="container py-5">
                 <div class="pricing-header p-3 pb-md-4 mx-auto text-center text-white my-lg-5">
-                    <h1 class="display-4 fw-bold text-white">TopGrade School Management System</h1>
-                    <p class="fs-5 text-white-50">Comprehensive digital solution for educational institutions. Experience
-                        seamless school management with our feature-rich platform.</p>
-
-                    <!-- <div class="toggle-container">
-                        <button class="toggle-btn active">Monthly</button>
-                        <button class="toggle-btn">Annually</button>
-                    </div> -->
+                    <h1 class="display-4 fw-bold text-white">Choose Your Perfect Plan</h1>
+                    <p class="fs-5 text-white-50">Select the software solution that best fits your business needs</p>
                 </div>
 
-                <div class="row row-cols-1 row-cols-md-4 mb-3 text-center g-4">
-                    <!-- Basic Plan -->
-                    <div class="col">
-                        <div class="card h-100">
-                            <div class="card-header py-3">
-                                <h4 class="my-0 fw-normal">Basic</h4>
-                            </div>
-                            <div class="card-body">
-                                <h1 class="price mb-3"><span class="rupee-symbol">Rs </span>2,999<small
-                                        class="text-muted fw-light">/mo</small></h1>
-                                <ul class="feature-list">
-                                    <li>Up to 100 students</li>
-                                    <li>Student enrollment</li>
-                                    <li>Basic attendance</li>
-                                    <li>Simple grading system</li>
-                                    <li>Parent login portal</li>
-                                    <li>1 Session</li>
-                                </ul>
-                                <button type="button" class="w-100 btn btn-purple mt-3">Get Started</button>
+                <!-- Software Filter -->
+                <div class="software-filter text-center">
+                    <button class="filter-btn active" data-filter="school">School Management</button>
+                    <button class="filter-btn" data-filter="pos">Point of Sale</button>
+                    <button class="filter-btn" data-filter="whatsapp">WhatsApp SMS</button>
+                    <button class="filter-btn" data-filter="hospital">Hospital Management</button>
+                </div>
+
+                <!-- School Management Pricing -->
+                <div class="pricing-plans" id="school-plans">
+                    <div class="row row-cols-1 row-cols-md-4 mb-3 text-center g-4">
+                        <!-- Basic Plan -->
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="card-header py-3">
+                                    <h4 class="my-0 fw-normal">Basic</h4>
+                                </div>
+                                <div class="card-body">
+                                    <h1 class="price mb-3"><span class="rupee-symbol">Rs </span>2,999<small
+                                            class="text-muted fw-light">/mo</small></h1>
+                                    <ul class="feature-list">
+                                        <li>Up to 100 students</li>
+                                        <li>Student enrollment</li>
+                                        <li>Basic attendance</li>
+                                        <li>Simple grading system</li>
+                                        <li>Parent login portal</li>
+                                        <li>1 Session</li>
+                                    </ul>
+                                    <button type="button" class="w-100 btn btn-purple mt-3">Get Started</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Standard Plan -->
-                    <div class="col">
-                        <div class="card h-100">
-                            <div class="card-header py-3">
-                                <h4 class="my-0 fw-normal">Standard</h4>
-                            </div>
-                            <div class="card-body">
-                                <h1 class="price mb-3"><span class="rupee-symbol">Rs </span>4,999<small
-                                        class="text-muted fw-light">/mo</small></h1>
-                                <ul class="feature-list">
-                                    <li>Up to 1000 students</li>
-                                    <li>Advanced attendance</li>
-                                    <li>Complete grading</li>
-                                    <li>Timetable management</li>
-                                    <li>Teacher dashboard</li>
-                                    <li>20GB storage</li>
-                                </ul>
-                                <button type="button" class="w-100 btn btn-purple mt-3">Get Started</button>
+                        <!-- Standard Plan -->
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="card-header py-3">
+                                    <h4 class="my-0 fw-normal">Standard</h4>
+                                </div>
+                                <div class="card-body">
+                                    <h1 class="price mb-3"><span class="rupee-symbol">Rs </span>4,999<small
+                                            class="text-muted fw-light">/mo</small></h1>
+                                    <ul class="feature-list">
+                                        <li>Up to 1000 students</li>
+                                        <li>Advanced attendance</li>
+                                        <li>Complete grading</li>
+                                        <li>Timetable management</li>
+                                        <li>Teacher dashboard</li>
+                                        <li>20GB storage</li>
+                                    </ul>
+                                    <button type="button" class="w-100 btn btn-purple mt-3">Get Started</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Professional Plan -->
-                    <div class="col">
-                        <div class="card h-100 recommended">
-                            <div class="card-header py-3">
-                                <h4 class="my-0 fw-normal">Professional</h4>
-                                <span class="badge bg-warning">Recommended</span>
-                            </div>
-                            <div class="card-body">
-                                <h1 class="price mb-3"><span class="rupee-symbol">Rs </span>7,999<small
-                                        class="text-muted fw-light">/mo</small></h1>
-                                <ul class="feature-list">
-                                    <li>Up to 2000 students</li>
-                                    <li>Advanced reporting</li>
-                                    <li>Exam management</li>
-                                    <li>Library management</li>
-                                    <li>Transport tracking</li>
-                                    <li>50GB storage</li>
-                                </ul>
-                                <button type="button" class="w-100 btn btn-purple mt-3">Get Started</button>
+                        <!-- Professional Plan -->
+                        <div class="col">
+                            <div class="card h-100 recommended">
+                                <div class="card-header py-3">
+                                    <h4 class="my-0 fw-normal">Professional</h4>
+                                    <span class="badge bg-warning">Recommended</span>
+                                </div>
+                                <div class="card-body">
+                                    <h1 class="price mb-3"><span class="rupee-symbol">Rs </span>7,999<small
+                                            class="text-muted fw-light">/mo</small></h1>
+                                    <ul class="feature-list">
+                                        <li>Up to 2000 students</li>
+                                        <li>Advanced reporting</li>
+                                        <li>Exam management</li>
+                                        <li>Library management</li>
+                                        <li>Transport tracking</li>
+                                        <li>50GB storage</li>
+                                    </ul>
+                                    <button type="button" class="w-100 btn btn-purple mt-3">Get Started</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Enterprise Plan -->
-                    <div class="col">
-                        <div class="card h-100">
-                            <div class="card-header py-3">
-                                <h4 class="my-0 fw-normal">Enterprise</h4>
-                            </div>
-                            <div class="card-body">
-                                <h1 class="price mb-3"><span class="rupee-symbol">Rs </span>14,999<small
-                                        class="text-muted fw-light">/mo</small></h1>
-                                <ul class="feature-list">
-                                    <li>Unlimited students</li>
-                                    <li>Custom features</li>
-                                    <li>API integration</li>
-                                    <li>Priority support</li>
-                                    <li>Data analytics</li>
-                                    <li>Unlimited storage</li>
-                                </ul>
-                                <button type="button" class="w-100 btn btn-purple mt-3">Contact Sales</button>
+                        <!-- Enterprise Plan -->
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="card-header py-3">
+                                    <h4 class="my-0 fw-normal">Enterprise</h4>
+                                </div>
+                                <div class="card-body">
+                                    <h1 class="price mb-3"><span class="rupee-symbol">Rs </span>14,999<small
+                                            class="text-muted fw-light">/mo</small></h1>
+                                    <ul class="feature-list">
+                                        <li>Unlimited students</li>
+                                        <li>Custom features</li>
+                                        <li>API integration</li>
+                                        <li>Priority support</li>
+                                        <li>Data analytics</li>
+                                        <li>Unlimited storage</li>
+                                    </ul>
+                                    <button type="button" class="w-100 btn btn-purple mt-3">Contact Sales</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- POS Pricing -->
+                <div class="pricing-plans hide" id="pos-plans">
+                    <div class="row row-cols-1 row-cols-md-4 mb-3 text-center g-4">
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="card-header py-3">
+                                    <h4 class="my-0 fw-normal">Basic POS</h4>
+                                </div>
+                                <div class="card-body">
+                                    <h1 class="price mb-3"><span class="rupee-symbol">Rs </span>1,999<small class="text-muted fw-light">/mo</small></h1>
+                                    <ul class="feature-list">
+                                        <li>Basic inventory management</li>
+                                        <li>Single outlet</li>
+                                        <li>Basic reporting</li>
+                                        <li>2 user accounts</li>
+                                        <li>Email support</li>
+                                        <li>5GB storage</li>
+                                    </ul>
+                                    <button type="button" class="w-100 btn btn-purple mt-3">Get Started</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Add more POS pricing cards here -->
+                    </div>
+                </div>
+
+                <!-- WhatsApp SMS Pricing -->
+                <div class="pricing-plans hide" id="whatsapp-plans">
+                    <div class="row row-cols-1 row-cols-md-4 mb-3 text-center g-4">
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="card-header py-3">
+                                    <h4 class="my-0 fw-normal">Starter</h4>
+                                </div>
+                                <div class="card-body">
+                                    <h1 class="price mb-3"><span class="rupee-symbol">Rs </span>999<small class="text-muted fw-light">/mo</small></h1>
+                                    <ul class="feature-list">
+                                        <li>1000 messages/month</li>
+                                        <li>Basic templates</li>
+                                        <li>Campaign tracking</li>
+                                        <li>Single device</li>
+                                        <li>Basic analytics</li>
+                                        <li>Email support</li>
+                                    </ul>
+                                    <button type="button" class="w-100 btn btn-purple mt-3">Get Started</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Add more WhatsApp pricing cards here -->
+                    </div>
+                </div>
+
+                <!-- Hospital Management Pricing -->
+                <div class="pricing-plans hide" id="hospital-plans">
+                    <div class="row row-cols-1 row-cols-md-4 mb-3 text-center g-4">
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="card-header py-3">
+                                    <h4 class="my-0 fw-normal">Clinic</h4>
+                                </div>
+                                <div class="card-body">
+                                    <h1 class="price mb-3"><span class="rupee-symbol">Rs </span>4,999<small class="text-muted fw-light">/mo</small></h1>
+                                    <ul class="feature-list">
+                                        <li>Patient management</li>
+                                        <li>Appointment scheduling</li>
+                                        <li>Basic billing</li>
+                                        <li>5 staff accounts</li>
+                                        <li>Basic reporting</li>
+                                        <li>10GB storage</li>
+                                    </ul>
+                                    <button type="button" class="w-100 btn btn-purple mt-3">Get Started</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Add more Hospital pricing cards here -->
+                    </div>
+                </div>
+
             </div>
         </div>
         <!-- Pricing Section End -->
 
     </div>
+ <!-- Footer Start -->
+ <div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5 px-lg-5">
+        <div class="row g-5">
+            <div class="col-md-6 col-lg-3">
+                <p class="section-title text-white h5 mb-4">Address<span></span></p>
+                <p><i class="fa fa-map-marker-alt me-3"></i>6A - Sohail Shaheed Road Adil Town Bahawalpur</p>
+                <p><i class="fa fa-phone-alt me-3"></i>+92 309 2770207</p>
+                <p><i class="fa fa-envelope me-3"></i>info@topgradesoftware.com</p>
+                <div class="d-flex pt-2">
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-light btn-social" target="_blank"
+                        href="https://www.facebook.com/people/Topgrade-Software-House/61572433876159/"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <p class="section-title text-white h5 mb-4">Quick Link<span></span></p>
+                <a class="btn btn-link" href="">About Us</a>
+                <a class="btn btn-link" href="">Contact Us</a>
+                <a class="btn btn-link" href="">Privacy Policy</a>
+                <a class="btn btn-link" href="">Terms & Condition</a>
+                <a class="btn btn-link" href="">Career</a>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <p class="section-title text-white h5 mb-4">Gallery<span></span></p>
+                <div class="row g-2">
+                    <div class="col-4">
+                        <img class="img-fluid" src="img/portfolio-1.jpg" alt="Image">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid" src="img/portfolio-2.jpg" alt="Image">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid" src="img/portfolio-3.jpg" alt="Image">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid" src="img/portfolio-4.jpg" alt="Image">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid" src="img/portfolio-5.jpg" alt="Image">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid" src="img/portfolio-6.jpg" alt="Image">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <p class="section-title text-white h5 mb-4">Newsletter<span></span></p>
+                <p>Subscribe Us For More Information</p>
+                <div class="position-relative w-100 mt-3">
+                    <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text"
+                        placeholder="Your Email" style="height: 48px;">
+                    <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
+                            class="fa fa-paper-plane text-primary fs-4"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container px-lg-5">
+        <div class="copyright">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="border-bottom" href="/">TopGrade Software</a>, All Right Reserved.
+                    Designed By <a class="border-bottom" href="https://alisiddiqui.tech">Ali Siddiqui</a>
+                </div>
+                <!-- <div class="col-md-6 text-center text-md-end">
+                    <div class="footer-menu">
+                        <a href="">Home</a>
+                        <a href="">Cookies</a>
+                        <a href="">Help</a>
+                        <a href="">FQAs</a>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
 
     <!-- Bootstrap JS and Popper.js -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <!-- Pricing Filter Javascript -->
     <script>
-        // Toggle between monthly and annual pricing
-        document.querySelectorAll('.toggle-btn').forEach(button => {
-            button.addEventListener('click', () => {
-                document.querySelectorAll('.toggle-btn').forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
+        // Wait for the DOM to be fully loaded
+        window.addEventListener('load', function() {
+            // Get all filter buttons and pricing plan containers
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const pricingPlans = document.querySelectorAll('.pricing-plans');
+
+            // Function to show selected plan and hide others
+            function showPlan(planId) {
+                pricingPlans.forEach(plan => {
+                    if (plan.id === planId) {
+                        plan.classList.remove('hide');
+                        plan.style.display = 'block';
+                    } else {
+                        plan.classList.add('hide');
+                        plan.style.display = 'none';
+                    }
+                });
+            }
+
+            // Add click event listeners to all filter buttons
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Get the selected plan ID
+                    const selectedPlan = `${this.getAttribute('data-filter')}-plans`;
+                    
+                    // Show the selected plan
+                    showPlan(selectedPlan);
+                });
             });
+
+            // Show school plans by default
+            showPlan('school-plans');
         });
     </script>
 </body>
