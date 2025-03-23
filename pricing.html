@@ -131,6 +131,13 @@
             backdrop-filter: blur(10px);
         }
 
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
         .filter-btn {
             background: transparent;
             color: white;
@@ -151,6 +158,52 @@
             background: white;
             color: var(--primary-purple);
             border-color: white;
+        }
+
+        /* Mobile Dropdown Styles */
+        .mobile-filter {
+            display: none;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .filter-select {
+            width: 100%;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            cursor: pointer;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 20px;
+        }
+
+        .filter-select:focus {
+            outline: none;
+            border-color: white;
+        }
+
+        .filter-select option {
+            background: var(--primary-purple);
+            color: white;
+            padding: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .filter-buttons {
+                display: none;
+            }
+            .mobile-filter {
+                display: block;
+            }
         }
 
         .pricing-plans {
@@ -209,10 +262,22 @@
 
                 <!-- Software Filter -->
                 <div class="software-filter text-center">
-                    <button class="filter-btn active" data-filter="school">School Management</button>
-                    <button class="filter-btn" data-filter="pos">Point of Sale</button>
-                    <button class="filter-btn" data-filter="whatsapp">WhatsApp SMS</button>
-                    <button class="filter-btn" data-filter="hospital">Hospital Management</button>
+                    <!-- Desktop Buttons -->
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="school">School Management</button>
+                        <button class="filter-btn" data-filter="pos">Point of Sale</button>
+                        <button class="filter-btn" data-filter="whatsapp">WhatsApp SMS</button>
+                        <button class="filter-btn" data-filter="hospital">Hospital Management</button>
+                    </div>
+                    <!-- Mobile Dropdown -->
+                    <div class="mobile-filter">
+                        <select class="filter-select" id="softwareFilter">
+                            <option value="school">School Management</option>
+                            <option value="pos">Point of Sale</option>
+                            <option value="whatsapp">WhatsApp SMS</option>
+                            <option value="hospital">Hospital Management</option>
+                        </select>
+                    </div>
                 </div>
 
                 <!-- School Management Pricing -->
@@ -490,13 +555,11 @@
 
     <!-- Pricing Filter Javascript -->
     <script>
-        // Wait for the DOM to be fully loaded
         window.addEventListener('load', function() {
-            // Get all filter buttons and pricing plan containers
             const filterButtons = document.querySelectorAll('.filter-btn');
+            const filterSelect = document.getElementById('softwareFilter');
             const pricingPlans = document.querySelectorAll('.pricing-plans');
 
-            // Function to show selected plan and hide others
             function showPlan(planId) {
                 pricingPlans.forEach(plan => {
                     if (plan.id === planId) {
@@ -509,20 +572,25 @@
                 });
             }
 
-            // Add click event listeners to all filter buttons
+            // Handle button clicks
             filterButtons.forEach(button => {
                 button.addEventListener('click', function() {
-                    // Remove active class from all buttons
                     filterButtons.forEach(btn => btn.classList.remove('active'));
-                    
-                    // Add active class to clicked button
                     this.classList.add('active');
-                    
-                    // Get the selected plan ID
                     const selectedPlan = `${this.getAttribute('data-filter')}-plans`;
-                    
-                    // Show the selected plan
                     showPlan(selectedPlan);
+                    // Sync dropdown with button selection
+                    filterSelect.value = this.getAttribute('data-filter');
+                });
+            });
+
+            // Handle dropdown change
+            filterSelect.addEventListener('change', function() {
+                const selectedPlan = `${this.value}-plans`;
+                showPlan(selectedPlan);
+                // Sync buttons with dropdown selection
+                filterButtons.forEach(btn => {
+                    btn.classList.toggle('active', btn.getAttribute('data-filter') === this.value);
                 });
             });
 
