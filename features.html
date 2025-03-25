@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>TopGrade Software - Features</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <link href="https://topgradesoftware.com/uploads/software_info/64269fb4f1452_dd.jpeg" rel="icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <style>
+        :root {
+            --primary-purple: #6f42c1;
+            --secondary-purple: #8250df;
+            --light-purple: #e9ecef;
+        }
+
+        .features-container {
+            background: linear-gradient(135deg, var(--primary-purple) 0%, #8250df 100%);
+            min-height: 100vh;
+            padding: 80px 0;
+        }
+
+        .software-filter {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .filter-btn {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            padding: 12px 25px;
+            margin: 5px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .filter-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: white;
+        }
+
+        .filter-btn.active {
+            background: white;
+            color: var(--primary-purple);
+            border-color: white;
+        }
+
+        .mobile-filter {
+            display: none;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .filter-select {
+            width: 100%;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            cursor: pointer;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 20px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-purple);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .feature-icon i {
+            font-size: 28px;
+            color: white;
+        }
+
+        .features-section {
+            transition: all 0.3s ease;
+        }
+
+        .features-section.hide {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .filter-buttons {
+                display: none;
+            }
+            .mobile-filter {
+                display: block;
+            }
+            .features-container {
+                padding: 40px 0;
+            }
+        }
+
+        .module-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .module-item {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .module-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .module-icon {
+            font-size: 36px;
+            color: var(--primary-purple);
+            margin-bottom: 15px;
+        }
+
+        .material-icons-round {
+            font-size: inherit;
+        }
+
+        .module-title {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--primary-purple);
+        }
+
+        .badge-custom {
+            background: var(--light-purple);
+            color: var(--primary-purple);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-top: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Navbar & Hero Start -->
+        <div class="container-xxl position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                <a href="" class="navbar-brand p-0">
+                    <h1 class="m-0">Topgrade Software</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav mx-auto py-0">
+                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <a href="pricing.html" class="nav-item nav-link">Pricing</a>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="faq.html" class="nav-item nav-link">FAQ</a>
+                        <a href="features.html" class="nav-item nav-link active">Features</a>
+                    </div>
+                    <a href="https://api.whatsapp.com/send?phone=03336616622&text=Hello" target="_blank" class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Software Login</a>
+                </div>
+            </nav>
+
+            <div class="container-xxl py-5 bg-primary hero-header">
+                <div class="container my-5 py-5 px-lg-5">
+                    <div class="row g-5 py-5">
+                        <div class="col-12 text-center">
+                            <h1 class="text-white animated slideInDown">Features</h1>
+                            <hr class="bg-white mx-auto mt-0" style="width: 90px;">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb justify-content-center">
+                                    <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+                                    <li class="breadcrumb-item text-white active" aria-current="page">Features</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+        <!-- Features Section Start -->
+        <div class="features-container">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h1 class="display-4 fw-bold text-white">Powerful Features</h1>
+                    <p class="fs-5 text-white-50">Discover the comprehensive features of our software solutions</p>
+                </div>
+
+                <!-- Software Filter -->
+                <div class="software-filter text-center">
+                    <!-- Desktop Buttons -->
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="school">School Management</button>
+                        <button class="filter-btn" data-filter="pos">Point of Sale</button>
+                        <button class="filter-btn" data-filter="whatsapp">WhatsApp SMS</button>
+                        <button class="filter-btn" data-filter="hospital">Hospital Management</button>
+                    </div>
+                    <!-- Mobile Dropdown -->
+                    <div class="mobile-filter">
+                        <select class="filter-select" id="softwareFilter">
+                            <option value="school">School Management</option>
+                            <option value="pos">Point of Sale</option>
+                            <option value="whatsapp">WhatsApp SMS</option>
+                            <option value="hospital">Hospital Management</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- School Management Features -->
+                <div class="features-section" id="school-features">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="text-center mb-4">
+                                <h2 class="text-white">School Management System Features</h2>
+                                <p class="text-white-50">Comprehensive modules to streamline your educational institution</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Silver Modules -->
+                    <div class="feature-card">
+                        <h3 class="text-primary mb-4">Silver Modules (11)</h3>
+                        <div class="module-grid">
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">person</span>
+                                <h4 class="module-title">Students Profile Management</h4>
+                                <span class="badge-custom">Basic</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">payments</span>
+                                <h4 class="module-title">Fee Management & Vouchers</h4>
+                                <span class="badge-custom">Essential</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">directions_bus</span>
+                                <h4 class="module-title">Transport Management</h4>
+                                <span class="badge-custom">Basic</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">badge</span>
+                                <h4 class="module-title">Certificate/ID Card</h4>
+                                <span class="badge-custom">Basic</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">fact_check</span>
+                                <h4 class="module-title">Attendance Management</h4>
+                                <span class="badge-custom">Essential</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">quiz</span>
+                                <h4 class="module-title">Exams Management</h4>
+                                <span class="badge-custom">Essential</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">inventory_2</span>
+                                <h4 class="module-title">Inventory & Stock Management</h4>
+                                <span class="badge-custom">Basic</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">local_library</span>
+                                <h4 class="module-title">Library Management</h4>
+                                <span class="badge-custom">Basic</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">account_balance_wallet</span>
+                                <h4 class="module-title">Payroll System</h4>
+                                <span class="badge-custom">Basic</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">message</span>
+                                <h4 class="module-title">Branded SMS System</h4>
+                                <span class="badge-custom">Basic</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">system_update</span>
+                                <h4 class="module-title">New Updates</h4>
+                                <span class="badge-custom">Regular</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gold Modules -->
+                    <div class="feature-card">
+                        <h3 class="text-primary mb-4">Gold Modules (16)</h3>
+                        <div class="module-grid">
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">manage_accounts</span>
+                                <h4 class="module-title">Students Profile Management</h4>
+                                <span class="badge-custom">Advanced</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">family_restroom</span>
+                                <h4 class="module-title">Parents Portal</h4>
+                                <span class="badge-custom">Advanced</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">menu_book</span>
+                                <h4 class="module-title">Library Management</h4>
+                                <span class="badge-custom">Advanced</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">account_balance</span>
+                                <h4 class="module-title">Payroll System</h4>
+                                <span class="badge-custom">Advanced</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">fingerprint</span>
+                                <h4 class="module-title">Biometric Attendance</h4>
+                                <span class="badge-custom">Premium</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">point_of_sale</span>
+                                <h4 class="module-title">Canteen/Point Of Sale</h4>
+                                <span class="badge-custom">Premium</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">schedule</span>
+                                <h4 class="module-title">Timetable</h4>
+                                <span class="badge-custom">Advanced</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">apartment</span>
+                                <h4 class="module-title">Hostel Management</h4>
+                                <span class="badge-custom">Premium</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Diamond Modules -->
+                    <div class="feature-card">
+                        <h3 class="text-primary mb-4">Diamond Modules (20)</h3>
+                        <div class="module-grid">
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">account_balance</span>
+                                <h4 class="module-title">Accounts & Finance</h4>
+                                <span class="badge-custom">Premium</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">event_note</span>
+                                <h4 class="module-title">Daily Lesson Plans</h4>
+                                <span class="badge-custom">Premium</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">menu_book</span>
+                                <h4 class="module-title">Syllabus Management</h4>
+                                <span class="badge-custom">Premium</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">assignment</span>
+                                <h4 class="module-title">Datesheet & Roll No Slips</h4>
+                                <span class="badge-custom">Premium</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- POS Features -->
+                <div class="features-section hide" id="pos-features">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="text-center mb-4">
+                                <h2 class="text-white">Point of Sale System Features</h2>
+                                <p class="text-white-50">Complete retail management solution for your business</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3 class="text-primary mb-4">Core Features</h3>
+                        <div class="module-grid">
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">shopping_cart</span>
+                                <h4 class="module-title">Sales Management</h4>
+                                <span class="badge-custom">Essential</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">inventory_2</span>
+                                <h4 class="module-title">Inventory Control</h4>
+                                <span class="badge-custom">Essential</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">people</span>
+                                <h4 class="module-title">Customer Management</h4>
+                                <span class="badge-custom">Essential</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">analytics</span>
+                                <h4 class="module-title">Reports & Analytics</h4>
+                                <span class="badge-custom">Advanced</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">receipt_long</span>
+                                <h4 class="module-title">Billing & Invoicing</h4>
+                                <span class="badge-custom">Essential</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">discount</span>
+                                <h4 class="module-title">Promotions & Discounts</h4>
+                                <span class="badge-custom">Advanced</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">support_agent</span>
+                                <h4 class="module-title">Customer Support</h4>
+                                <span class="badge-custom">Premium</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">point_of_sale</span>
+                                <h4 class="module-title">Multi-Terminal Support</h4>
+                                <span class="badge-custom">Premium</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WhatsApp Features -->
+                <div class="features-section hide" id="whatsapp-features">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="text-center mb-4">
+                                <h2 class="text-white">WhatsApp SMS System Features</h2>
+                                <p class="text-white-50">Powerful messaging solution for business communication</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3 class="text-primary mb-4">Core Features</h3>
+                        <div class="module-grid">
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">send</span>
+                                <h4 class="module-title">Bulk Messaging</h4>
+                                <span class="badge-custom">Essential</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">description</span>
+                                <h4 class="module-title">Message Templates</h4>
+                                <span class="badge-custom">Essential</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">schedule_send</span>
+                                <h4 class="module-title">Scheduled Messages</h4>
+                                <span class="badge-custom">Advanced</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">analytics</span>
+                                <h4 class="module-title">Message Analytics</h4>
+                                <span class="badge-custom">Premium</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">groups</span>
+                                <h4 class="module-title">Group Management</h4>
+                                <span class="badge-custom">Advanced</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">contact_phone</span>
+                                <h4 class="module-title">Contact Management</h4>
+                                <span class="badge-custom">Essential</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">auto_awesome</span>
+                                <h4 class="module-title">Auto Replies</h4>
+                                <span class="badge-custom">Premium</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">integration_instructions</span>
+                                <h4 class="module-title">API Integration</h4>
+                                <span class="badge-custom">Premium</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hospital Features -->
+                <div class="features-section hide" id="hospital-features">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="text-center mb-4">
+                                <h2 class="text-white">Hospital Management System Features</h2>
+                                <p class="text-white-50">Comprehensive healthcare management solution</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3 class="text-primary mb-4">Core Features</h3>
+                        <div class="module-grid">
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">personal_injury</span>
+                                <h4 class="module-title">Patient Management</h4>
+                                <span class="badge-custom">Essential</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">event_available</span>
+                                <h4 class="module-title">Appointment Scheduling</h4>
+                                <span class="badge-custom">Essential</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">medication</span>
+                                <h4 class="module-title">Pharmacy Management</h4>
+                                <span class="badge-custom">Advanced</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">science</span>
+                                <h4 class="module-title">Laboratory Management</h4>
+                                <span class="badge-custom">Premium</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">medical_services</span>
+                                <h4 class="module-title">Emergency Services</h4>
+                                <span class="badge-custom">Essential</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">receipt_long</span>
+                                <h4 class="module-title">Billing & Insurance</h4>
+                                <span class="badge-custom">Advanced</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">monitor_heart</span>
+                                <h4 class="module-title">Patient Monitoring</h4>
+                                <span class="badge-custom">Premium</span>
+                            </div>
+                            <div class="module-item">
+                                <span class="material-icons-round module-icon">inventory</span>
+                                <h4 class="module-title">Inventory Management</h4>
+                                <span class="badge-custom">Advanced</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Features Section End -->
+
+        <!-- Footer Start -->
+        <div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5 px-lg-5">
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-3">
+                        <p class="section-title text-white h5 mb-4">Address<span></span></p>
+                        <p><i class="fa fa-map-marker-alt me-3"></i>6A - Sohail Shaheed Road Adil Town Bahawalpur</p>
+                        <p><i class="fa fa-phone-alt me-3"></i>+92 300 6616622</p>
+                        <p><i class="fa fa-envelope me-3"></i>info@topgradesoftware.com</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" target="_blank"
+                                href="https://www.facebook.com/people/Topgrade-Software-House/61572433876159/"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <p class="section-title text-white h5 mb-4">Quick Link<span></span></p>
+                        <a class="btn btn-link" href="">About Us</a>
+                        <a class="btn btn-link" href="">Contact Us</a>
+                        <a class="btn btn-link" href="">Privacy Policy</a>
+                        <a class="btn btn-link" href="">Terms & Condition</a>
+                        <a class="btn btn-link" href="">Career</a>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <p class="section-title text-white h5 mb-4">Gallery<span></span></p>
+                        <div class="row g-2">
+                            <div class="col-4">
+                                <img class="img-fluid" src="img/portfolio-1.jpg" alt="Image">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid" src="img/portfolio-2.jpg" alt="Image">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid" src="img/portfolio-3.jpg" alt="Image">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid" src="img/portfolio-4.jpg" alt="Image">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid" src="img/portfolio-5.jpg" alt="Image">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid" src="img/portfolio-6.jpg" alt="Image">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <p class="section-title text-white h5 mb-4">Newsletter<span></span></p>
+                        <p>Subscribe Us For More Information</p>
+                        <div class="position-relative w-100 mt-3">
+                            <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text"
+                                placeholder="Your Email" style="height: 48px;">
+                            <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
+                                    class="fa fa-paper-plane text-primary fs-4"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container px-lg-5">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="/">TopGrade Software</a>, All Right Reserved.
+                            Designed By <a class="border-bottom" href="https://alisiddiqui.tech">Ali Siddiqui</a>
+                        </div>
+                        <!-- <div class="col-md-6 text-center text-md-end">
+                                <div class="footer-menu">
+                                    <a href="">Home</a>
+                                    <a href="">Cookies</a>
+                                    <a href="">Help</a>
+                                    <a href="">FQAs</a>
+                                </div>
+                            </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <!-- Features Filter Javascript -->
+    <script>
+        window.addEventListener('load', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const filterSelect = document.getElementById('softwareFilter');
+            const featuresSections = document.querySelectorAll('.features-section');
+
+            function showFeatures(featureId) {
+                featuresSections.forEach(section => {
+                    if (section.id === featureId) {
+                        section.classList.remove('hide');
+                        section.style.display = 'block';
+                    } else {
+                        section.classList.add('hide');
+                        section.style.display = 'none';
+                    }
+                });
+            }
+
+            // Handle button clicks
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    const selectedFeature = `${this.getAttribute('data-filter')}-features`;
+                    showFeatures(selectedFeature);
+                    // Sync dropdown with button selection
+                    filterSelect.value = this.getAttribute('data-filter');
+                });
+            });
+
+            // Handle dropdown change
+            filterSelect.addEventListener('change', function() {
+                const selectedFeature = `${this.value}-features`;
+                showFeatures(selectedFeature);
+                // Sync buttons with dropdown selection
+                filterButtons.forEach(btn => {
+                    btn.classList.toggle('active', btn.getAttribute('data-filter') === this.value);
+                });
+            });
+
+            // Show school features by default
+            showFeatures('school-features');
+        });
+    </script>
+</body>
+
+</html>
