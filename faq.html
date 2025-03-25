@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>TopGrade Software - FAQs</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <link href="https://topgradesoftware.com/uploads/software_info/64269fb4f1452_dd.jpeg" rel="icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-purple: #6f42c1;
+            --secondary-purple: #8250df;
+            --light-purple: #e9ecef;
+        }
+
+        .faq-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--secondary-purple) 100%);
+        }
+
+        .faq-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .faq-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .faq-header {
+            padding: 20px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-header h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: var(--primary-purple);
+            font-weight: 600;
+        }
+
+        .faq-header i {
+            color: var(--primary-purple);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-header[aria-expanded="true"] i {
+            transform: rotate(180deg);
+        }
+
+        .faq-body {
+            padding: 0 30px 20px;
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .faq-body ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .faq-body li {
+            margin-bottom: 8px;
+        }
+
+        .faq-search {
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        .faq-search .form-control {
+            border-radius: 30px;
+            padding: 15px 25px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        .faq-search .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .faq-search .form-control:focus {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+
+        @media (max-width: 768px) {
+            .faq-section {
+                padding: 40px 0;
+            }
+
+            .faq-header {
+                padding: 15px 20px;
+            }
+
+            .faq-body {
+                padding: 0 20px 15px;
+            }
+
+            .faq-header h3 {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-xxl position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                <a href="" class="navbar-brand p-0">
+                    <h1 class="m-0">Topgrade Software</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav mx-auto py-0">
+                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <a href="pricing.html" class="nav-item nav-link">Pricing</a>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="faq.html" class="nav-item nav-link active">FAQ</a>
+                    </div>
+                    <a href="https://api.whatsapp.com/send?phone=03336616622&text=Hello" target="_blank" class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Software Login</a>
+                </div>
+            </nav>
+
+            <div class="container-xxl py-5 bg-primary hero-header">
+                <div class="container my-5 py-5 px-lg-5">
+                    <div class="row g-5 py-5">
+                        <div class="col-12 text-center">
+                            <h1 class="text-white animated slideInDown">Frequently Asked Questions</h1>
+                            <hr class="bg-white mx-auto mt-0" style="width: 90px;">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb justify-content-center">
+                                    <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+                                    <li class="breadcrumb-item text-white active" aria-current="page">FAQ</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+        <!-- FAQ Section Start -->
+        <div class="faq-section">
+            <div class="container">
+                <div class="faq-search">
+                    <input type="text" class="form-control" placeholder="Search for your question...">
+                </div>
+
+                <div class="accordion" id="faqAccordion">
+                    <!-- What is TopGradeSoftware? -->
+                    <div class="faq-card">
+                        <div class="faq-header" id="heading1" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                            <h3>What is TopGradeSoftware?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div id="collapse1" class="collapse show" aria-labelledby="heading1" data-bs-parent="#faqAccordion">
+                            <div class="faq-body">
+                                TopGradeSoftware is an all-in-one school management system that helps manage administrative and academic activities such as online admission management, fees, employees' payroll, examination, grade book, bulk data management, transportation, library, course and batches, student attendance, assignments, communication and much more.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pricing Packages -->
+                    <div class="faq-card">
+                        <div class="faq-header" id="heading2" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                            <h3>What are the pricing packages?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div id="collapse2" class="collapse" aria-labelledby="heading2" data-bs-parent="#faqAccordion">
+                            <div class="faq-body">
+                                We offer three packages based on modules and student strength:
+                                <ul>
+                                    <li>Silver: ₹3,000 (up to 300 students)</li>
+                                    <li>Gold: ₹5,000 (up to 800 students)</li>
+                                    <li>Diamond: ₹10,000 (up to 2000 students)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Demo Accounts -->
+                    <div class="faq-card">
+                        <div class="faq-header" id="heading3" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                            <h3>Does TopGradeSoftware offer demo accounts?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div id="collapse3" class="collapse" aria-labelledby="heading3" data-bs-parent="#faqAccordion">
+                            <div class="faq-body">
+                                Not at the moment, but we'll be providing demo sessions soon.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Application -->
+                    <div class="faq-card">
+                        <div class="faq-header" id="heading4" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                            <h3>Is there a mobile application available?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div id="collapse4" class="collapse" aria-labelledby="heading4" data-bs-parent="#faqAccordion">
+                            <div class="faq-body">
+                                Yes, we have mobile applications for parents, teachers, and students. The mobile app provides easy access to important features and notifications.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Features -->
+                    <div class="faq-card">
+                        <div class="faq-header" id="heading5" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                            <h3>What features are available?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div id="collapse5" class="collapse" aria-labelledby="heading5" data-bs-parent="#faqAccordion">
+                            <div class="faq-body">
+                                <ul>
+                                    <li>Student Profiles Management</li>
+                                    <li>Attendance Management</li>
+                                    <li>Branded SMS System</li>
+                                    <li>Fee Management & Fee Vouchers</li>
+                                    <li>Parents & Teachers Portal</li>
+                                    <li>Exams Management</li>
+                                    <li>Transport Management</li>
+                                    <li>Inventory/Stock Management</li>
+                                    <li>Expenses, Profit & Loss Reports</li>
+                                    <li>Payroll System</li>
+                                    <li>Mobile Application</li>
+                                    <li>Timetable Management</li>
+                                    <li>Datesheet & Roll No Slips</li>
+                                    <li>DLP & Syllabus Management</li>
+                                    <li>And many more...</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Installation -->
+                    <div class="faq-card">
+                        <div class="faq-header" id="heading6" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                            <h3>What is the installation process?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div id="collapse6" class="collapse" aria-labelledby="heading6" data-bs-parent="#faqAccordion">
+                            <div class="faq-body">
+                                The installation is done online. After collecting all necessary information, we perform the online installation and create your username and password. The deployment time is around 1 day, and data entry time depends upon your school's strength.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Support -->
+                    <div class="faq-card">
+                        <div class="faq-header" id="heading7" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                            <h3>Does TopGradeSoftware offer support and training?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div id="collapse7" class="collapse" aria-labelledby="heading7" data-bs-parent="#faqAccordion">
+                            <div class="faq-body">
+                                Yes, we provide comprehensive support and training to all our clients to ensure they get the most out of our software.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- FAQ Section End -->
+
+        <!-- Footer Start -->
+        <div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5 px-lg-5">
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-3">
+                        <p class="section-title text-white h5 mb-4">Address<span></span></p>
+                        <p><i class="fa fa-map-marker-alt me-3"></i>6A - Sohail Shaheed Road Adil Town Bahawalpur</p>
+                        <p><i class="fa fa-phone-alt me-3"></i>+92 300 6616622</p>
+                        <p><i class="fa fa-envelope me-3"></i>info@topgradesoftware.com</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" target="_blank"
+                                href="https://www.facebook.com/people/Topgrade-Software-House/61572433876159/"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <p class="section-title text-white h5 mb-4">Quick Link<span></span></p>
+                        <a class="btn btn-link" href="">About Us</a>
+                        <a class="btn btn-link" href="">Contact Us</a>
+                        <a class="btn btn-link" href="">Privacy Policy</a>
+                        <a class="btn btn-link" href="">Terms & Condition</a>
+                        <a class="btn btn-link" href="">Career</a>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <p class="section-title text-white h5 mb-4">Gallery<span></span></p>
+                        <div class="row g-2">
+                            <div class="col-4">
+                                <img class="img-fluid" src="img/portfolio-1.jpg" alt="Image">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid" src="img/portfolio-2.jpg" alt="Image">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid" src="img/portfolio-3.jpg" alt="Image">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid" src="img/portfolio-4.jpg" alt="Image">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid" src="img/portfolio-5.jpg" alt="Image">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid" src="img/portfolio-6.jpg" alt="Image">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <p class="section-title text-white h5 mb-4">Newsletter<span></span></p>
+                        <p>Subscribe Us For More Information</p>
+                        <div class="position-relative w-100 mt-3">
+                            <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text"
+                                placeholder="Your Email" style="height: 48px;">
+                            <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
+                                    class="fa fa-paper-plane text-primary fs-4"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container px-lg-5">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="/">TopGrade Software</a>, All Right Reserved.
+                            Designed By <a class="border-bottom" href="https://alisiddiqui.tech">Ali Siddiqui</a>
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <!-- FAQ Search Functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.querySelector('.faq-search input');
+            const faqCards = document.querySelectorAll('.faq-card');
+
+            searchInput.addEventListener('input', function(e) {
+                const searchTerm = e.target.value.toLowerCase();
+                
+                faqCards.forEach(card => {
+                    const question = card.querySelector('h3').textContent.toLowerCase();
+                    const answer = card.querySelector('.faq-body').textContent.toLowerCase();
+                    
+                    if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html> 
