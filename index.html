@@ -20,7 +20,13 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <style>
-        
+        body {
+            overflow-x: hidden;
+        }
+        footer {
+            overflow-x: hidden;
+        }
+
         .modal-fullscreen {
             background: linear-gradient(135deg, var(--primary-purple) 0%, #8250df 100%);
         }
@@ -634,53 +640,56 @@
 
 
         <!-- Testimonial Start -->
-        <!-- <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
             <div class="container py-5 px-lg-5">
                 <p class="section-title text-secondary justify-content-center"><span></span>Testimonial<span></span></p>
                 <h1 class="text-center mb-5">What Say Our Clients!</h1>
                 <div class="owl-carousel testimonial-carousel">
                     <div class="testimonial-item bg-light rounded my-4">
-                        <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Diam dolor diam
-                            ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit sed stet lorem sit
-                            clita duo justo.</p>
+                        <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Topgrade Software
+                            is a great company that provides top-notch software solutions. They are professional and
+                            dedicated to delivering high-quality services. I highly recommend them for any software
+                            development needs.</p>
                         <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-1.jpg"
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/seeks-logo.jpg"
                                 style="width: 65px; height: 65px;">
                             <div class="ps-4">
-                                <h5 class="mb-1">Client Name</h5>
-                                <span>Profession</span>
+                                <h5 class="mb-1">SEEKS SCHOOL SYSTEM</h5>
+                                <span>SCHOOL</span>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial-item bg-light rounded my-4">
-                        <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Diam dolor diam
-                            ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit sed stet lorem sit
-                            clita duo justo.</p>
+                        <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Topgrade Software
+                            is a great company that provides top-notch software solutions. They are professional and
+                            dedicated to delivering high-quality services. I highly recommend them for any software
+                            development needs.</p>
                         <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-2.jpg"
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/montessori-school-logo.jpg"
                                 style="width: 65px; height: 65px;">
                             <div class="ps-4">
-                                <h5 class="mb-1">Client Name</h5>
-                                <span>Profession</span>
+                                <h5 class="mb-1">MONTESSORI CITY SCHOOL</h5>
+                                <span>SCHOOL</span>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial-item bg-light rounded my-4">
-                        <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Diam dolor diam
-                            ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit sed stet lorem sit
-                            clita duo justo.</p>
+                        <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Topgrade Software
+                            is a great company that provides top-notch software solutions. They are professional and
+                            dedicated to delivering high-quality services. I highly recommend them for any software
+                            development needs.</p>
                         <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-3.jpg"
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/city-school-logo.png"
                                 style="width: 65px; height: 65px;">
                             <div class="ps-4">
-                                <h5 class="mb-1">Client Name</h5>
-                                <span>Profession</span>
+                                <h5 class="mb-1">CITY SCHOOL</h5>
+                                <span>SCHOOL</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
         <!-- Testimonial End -->
 
 
@@ -870,11 +879,16 @@
     <script src="js/main.js"></script>
     <script>
          // Show welcome modal after page load
-         const welcomeModal = new bootstrap.Modal(document.getElementById('welcomeModal'), {
+         // Check if user has visited before
+    
+             const welcomeModal = new bootstrap.Modal(document.getElementById('welcomeModal'), {
                 backdrop: 'static',
                 keyboard: false
-            });
-            welcomeModal.show();
+             });
+             
+             window.addEventListener('load', function() {
+                welcomeModal.show();
+             });
     </script>
 </body>
 
