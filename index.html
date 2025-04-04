@@ -5,8 +5,12 @@
     <meta charset="utf-8">
     <title>TopGrade Software</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+    <meta content="TopGrade Software, School Management Software, Point of Sale Software, WhatsApp Software, Hospital Management Software, Restaurent System, Paper Making, Real Estate" name="keywords">
+    <meta name="description" content="TopGrade Software is a software development company that provides software solutions for businesses and organizations.">
+    <meta name="author" content="TopGrade Software">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
     <link href="https://topgradesoftware.com/uploads/software_info/64269fb4f1452_dd.jpeg" rel="icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,10 +54,56 @@
         .lead {
             color: rgba(255, 255, 255, 0.8);
         }
+
+        /* WhatsApp Floating Button Styles */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #128C7E;
+            color: white;
+        }
+
+        .whatsapp-float i {
+            font-size: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+            .whatsapp-float i {
+                font-size: 25px;
+            }
+        }
     </style>
 </head>
 
 <body>
+    <!-- WhatsApp Float Button -->
+    <a href="https://api.whatsapp.com/send?phone=03336616622&text=Hello" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <div class="container-xxl bg-white p-0">
         <!-- Spinner Start -->
         <div id="spinner"
@@ -77,21 +127,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav mx-auto py-0">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
-                        <!-- <a href="about.html" class="nav-item nav-link">About</a> -->
-                        <!-- <a href="service.html" class="nav-item nav-link">Service</a> -->
+                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <a href="features.html" class="nav-item nav-link active">Features</a>
                         <a href="pricing.html" class="nav-item nav-link">Pricing</a>
-                        <!-- <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu m-0">
-                                <a href="team.html" class="dropdown-item">Our Team</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                <a href="404.html" class="dropdown-item">404 Page</a>
-                            </div>
-                        </div> -->
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
                         <a href="faq.html" class="nav-item nav-link">FAQ</a>
-                        <a href="features.html" class="nav-item nav-link">Features</a>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
                     </div>
                     <a href="https://topgradesoftware.com/index.php" target="_blank"
                         class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Login</a>
@@ -387,12 +427,12 @@
                     </div>
                     <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
                         <i class="fa fa-users fa-3x text-secondary mb-3"></i>
-                        <h1 class="text-white mb-2" data-toggle="counter-up">200</h1>
+                        <h1 class="text-white mb-2" data-toggle="counter-up">500</h1>
                         <p class="text-white mb-0">Satisfied Clients</p>
                     </div>
                     <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
                         <i class="fa fa-check fa-3x text-secondary mb-3"></i>
-                        <h1 class="text-white mb-2" data-toggle="counter-up">8</h1>
+                        <h1 class="text-white mb-2" data-toggle="counter-up">50</h1>
                         <p class="text-white mb-0">Compleate Projects</p>
                     </div>
                 </div>
@@ -710,7 +750,7 @@
                                 <span>CEO & Founder</span>
                             </div>
                             <div class="d-flex justify-content-center p-4">
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square mx-1" href="https://www.facebook.com/profile.php?id=61571565575131"><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
                                 <a class="btn btn-square mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
@@ -722,7 +762,7 @@
                             <div class="text-center border-bottom p-4">
                                 <img class="img-fluid rounded-circle mb-4" src="img/team-2.jpg" alt="">
                                 <h5>Moin</h5>
-                                <span>Software Engineer</span>
+                                <span>Software Developer</span>
                             </div>
                             <div class="d-flex justify-content-center p-4">
                                 <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
@@ -737,10 +777,10 @@
                             <div class="text-center border-bottom p-4">
                                 <img class="img-fluid rounded-circle mb-4" src="img/team-3.jpg" alt="">
                                 <h5>Ali Siddiqui</h5>
-                                <span>HR Department</span>
+                                <span>Web Developer</span>
                             </div>
                             <div class="d-flex justify-content-center p-4">
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square mx-1" href="https://www.facebook.com/ali.khaliq.167"><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
                                 <a class="btn btn-square mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
@@ -763,21 +803,21 @@
                         <p><i class="fa fa-phone-alt me-3"></i>+92 300 6616622</p>
                         <p><i class="fa fa-envelope me-3"></i>info@topgradesoftware.com</p>
                         <div class="d-flex pt-2">
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                            <!-- <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a> -->
                             <a class="btn btn-outline-light btn-social" target="_blank"
-                                href="https://www.facebook.com/people/Topgrade-Software-House/61572433876159/"><i
+                                href="http://facebook.com/profile.php?id=61572433876159"><i
                                     class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                            <!-- <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a> -->
+                            <!-- <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a> -->
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <p class="section-title text-white h5 mb-4">Quick Link<span></span></p>
-                        <a class="btn btn-link" href="">About Us</a>
-                        <a class="btn btn-link" href="">Contact Us</a>
-                        <a class="btn btn-link" href="">Privacy Policy</a>
-                        <a class="btn btn-link" href="">Terms & Condition</a>
-                        <a class="btn btn-link" href="">Career</a>
+                        <a class="btn btn-link" href="index.html">Home</a>
+                        <a class="btn btn-link" href="features.html">Features</a>
+                        <a class="btn btn-link" href="pricing.html">Pricing</a>
+                        <a class="btn btn-link" href="faq.html">FAQ</a>
+                        <a class="btn btn-link" href="contact.html">Contact</a>
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <p class="section-title text-white h5 mb-4">Gallery<span></span></p>
@@ -861,7 +901,7 @@
         </div>
 
         <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+        <!-- <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a> -->
     </div>
 
     <!-- JavaScript Libraries -->
