@@ -6,8 +6,11 @@
     <title>TopGrade Software - Contact Us</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="TopGrade Software, School Management Software, Point of Sale Software, WhatsApp Software, Hospital Management Software, Restaurent System, Paper Making, Real Estate" name="keywords">
-    <meta name="description" content="TopGrade Software is a software development company that provides software solutions for businesses and organizations.">
+    <meta
+        content="TopGrade Software, School Management Software, Point of Sale Software, WhatsApp Software, Hospital Management Software, Restaurent System, Paper Making, Real Estate"
+        name="keywords">
+    <meta name="description"
+        content="TopGrade Software is a software development company that provides software solutions for businesses and organizations.">
     <meta name="author" content="TopGrade Software">
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow">
@@ -33,12 +36,60 @@
 
         body {
             overflow-x: hidden;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .container-xxl {
+            max-width: 100% !important;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        /* Responsive padding for different screen sizes */
+        @media (min-width: 1400px) {
+            .container-xxl {
+                padding-left: 3rem;
+                padding-right: 3rem;
+            }
+        }
+
+        @media (min-width: 1600px) {
+            .container-xxl {
+                padding-left: 4rem;
+                padding-right: 4rem;
+            }
+        }
+
+        @media (min-width: 1920px) {
+            .container-xxl {
+                padding-left: 5rem;
+                padding-right: 5rem;
+            }
+        }
+
+        /* Ensure images scale properly */
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Adjust grid spacing for larger screens */
+        @media (min-width: 1400px) {
+            .row {
+                margin-left: -1.5rem;
+                margin-right: -1.5rem;
+            }
+
+            .col-lg-4 {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
         }
 
         .contact-container {
-            background: linear-gradient(135deg, var(--primary-purple) 0%, #8250df 100%);
             min-height: 100vh;
-            padding: 80px 0;
+            /* padding: 80px 0; */
             width: 100%;
             overflow-x: hidden;
         }
@@ -145,7 +196,7 @@
             .contact-container {
                 padding: 40px 15px;
             }
-            
+
             .map-container iframe {
                 height: 300px;
             }
@@ -154,7 +205,7 @@
                 padding: 20px;
             }
 
-            .container {
+            .container-xxl {
                 padding-left: 15px;
                 padding-right: 15px;
             }
@@ -209,7 +260,8 @@
 <body>
     <div class="container-xxl bg-white p-0">
         <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div id="spinner"
+            class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
                 <span class="sr-only">Loading...</span>
             </div>
@@ -228,17 +280,18 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav mx-auto py-0">
                         <a href="index.html" class="nav-item nav-link">Home</a>
-                        <a href="features.html" class="nav-item nav-link active">Features</a>
+                        <a href="features.html" class="nav-item nav-link">Features</a>
                         <a href="pricing.html" class="nav-item nav-link">Pricing</a>
                         <a href="faq.html" class="nav-item nav-link">FAQ</a>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="contact.html" class="nav-item nav-link active">Contact</a>
                     </div>
-                    <a href="https://topgradesoftware.com/index.php" target="_blank" class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Login</a>
+                    <a href="https://topgradesoftware.com/index.php" target="_blank"
+                        class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Login</a>
                 </div>
             </nav>
 
             <div class="container-xxl py-5 bg-primary hero-header">
-                <div class="container my-5 py-5 px-lg-5">
+                <div class="container-xxl my-5 py-5 px-lg-5">
                     <div class="row g-5 py-5">
                         <div class="col-12 text-center">
                             <h1 class="text-white animated slideInDown">Contact</h1>
@@ -259,7 +312,7 @@
 
         <!-- Contact Section Start -->
         <div class="contact-container">
-            <div class="container">
+            <div class="container-xxl">
                 <div class="text-center mb-5">
                     <h1 class="display-4 fw-bold text-white">Get in Touch</h1>
                     <p class="fs-5 text-white-50">We'd love to hear from you. Please fill out this form.</p>
@@ -267,7 +320,7 @@
 
                 <div class="row g-4">
                     <!-- Contact Information -->
-                    <div class="col-lg-4">
+                    <div class="col-lg-6">
                         <div class="contact-card h-100">
                             <div class="text-center">
                                 <div class="contact-icon mx-auto">
@@ -276,7 +329,8 @@
                                 <h4 class="mb-4">Our Location</h4>
                                 <p class="mb-4">6A - Sohail Shaheed Road Adil Town Bahawalpur</p>
                                 <div class="social-links">
-                                    <a href="http://facebook.com/profile.php?id=61572433876159"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="http://facebook.com/profile.php?id=61572433876159"><i
+                                            class="fab fa-facebook-f"></i></a>
                                     <a href="#"><i class="fab fa-twitter"></i></a>
                                     <a href="#"><i class="fab fa-instagram"></i></a>
                                     <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -285,30 +339,8 @@
                         </div>
                     </div>
 
-                    <!-- Contact Form -->
-                    <div class="col-lg-4">
-                        <div class="contact-card h-100">
-                            <h4 class="mb-4">Send us a Message</h4>
-                            <form>
-                                <div class="mb-3">
-                                    <input type="text" class="form-control" placeholder="Your Name" required>
-                                </div>
-                                <div class="mb-3">
-                                    <input type="email" class="form-control" placeholder="Your Email" required>
-                                </div>
-                                <div class="mb-3">
-                                    <input type="text" class="form-control" placeholder="Subject" required>
-                                </div>
-                                <div class="mb-3">
-                                    <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-contact w-100">Send Message</button>
-                            </form>
-                        </div>
-                    </div>
-
                     <!-- Contact Details -->
-                    <div class="col-lg-4">
+                    <div class="col-lg-6">
                         <div class="contact-card h-100">
                             <div class="text-center">
                                 <div class="contact-icon mx-auto">
@@ -326,119 +358,110 @@
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Map Section -->
-                <div class="row mt-5">
-                    <div class="col-12">
-                        <div class="map-container">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3476.4663200244204!2d71.66543297425655!3d29.38591164947351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393b9128c7bc4903%3A0x6ef3e9a5f71670e4!2sSEEKS%20ACADEMY!5e0!3m2!1sen!2s!4v1742894170675!5m2!1sen!2s" width="100%" height="450" style="border:0; display: block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <!-- Map Section -->
+                    <div class="row mt-5">
+                        <div class="col-12">
+                            <div class="map-container">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3476.4663200244204!2d71.66543297425655!3d29.38591164947351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393b9128c7bc4903%3A0x6ef3e9a5f71670e4!2sSEEKS%20ACADEMY!5e0!3m2!1sen!2s!4v1742894170675!5m2!1sen!2s"
+                                    width="100%" height="450" style="border:0; display: block;" allowfullscreen=""
+                                    loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Contact Section End -->
+
+            <!-- Footer Start -->
+            <div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
+                <div class="container-fluid py-4 px-lg-5">
+                    <div class="row g-4">
+                        <div class="col-md-6 col-lg-3">
+                            <p class="section-title text-white h5 mb-3">Address<span></span></p>
+                            <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>6A - Sohail Shaheed Road Adil Town Bahawalpur</p>
+                            <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+92 300 6616622</p>
+                            <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@topgradesoftware.com</p>
+                            <div class="d-flex pt-2">
+                                <a class="btn btn-outline-light btn-social" target="_blank"
+                                    href="http://facebook.com/profile.php?id=61572433876159"><i
+                                        class="fab fa-facebook-f"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <p class="section-title text-white h5 mb-3">Quick Link<span></span></p>
+                            <a class="btn btn-link" href="index.html">Home</a>
+                            <a class="btn btn-link" href="features.html">Features</a>
+                            <a class="btn btn-link" href="pricing.html">Pricing</a>
+                            <a class="btn btn-link" href="faq.html">FAQ</a>
+                            <a class="btn btn-link" href="contact.html">Contact</a>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <p class="section-title text-white h5 mb-3">Gallery<span></span></p>
+                            <div class="row g-2">
+                                <div class="col-4">
+                                    <img class="img-fluid" src="img/portfolio-1.jpg" alt="Image">
+                                </div>
+                                <div class="col-4">
+                                    <img class="img-fluid" src="img/portfolio-2.jpg" alt="Image">
+                                </div>
+                                <div class="col-4">
+                                    <img class="img-fluid" src="img/portfolio-3.jpg" alt="Image">
+                                </div>
+                                <div class="col-4">
+                                    <img class="img-fluid" src="img/portfolio-4.jpg" alt="Image">
+                                </div>
+                                <div class="col-4">
+                                    <img class="img-fluid" src="img/portfolio-5.jpg" alt="Image">
+                                </div>
+                                <div class="col-4">
+                                    <img class="img-fluid" src="img/portfolio-6.jpg" alt="Image">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <p class="section-title text-white h5 mb-3">Newsletter<span></span></p>
+                            <p class="mb-2">Subscribe Us For More Information</p>
+                            <div class="position-relative w-100">
+                                <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text"
+                                    placeholder="Your Email" style="height: 48px;">
+                                <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
+                                        class="fa fa-paper-plane text-primary fs-4"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid px-lg-5 py-3">
+                    <div class="copyright">
+                        <div class="row">
+                            <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+                                &copy; <a class="border-bottom" href="/">TopGrade Software</a>, All Right Reserved.
+                                Designed By <a class="border-bottom" href="https://alisiddiqui.tech">Ali Siddiqui</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer End -->
+
+            <!-- Back to Top -->
+            <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
         </div>
-        <!-- Contact Section End -->
 
-        <!-- Footer Start -->
-        <div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
-            <div class="container py-5 px-lg-5">
-                <div class="row g-5">
-                    <div class="col-md-6 col-lg-3">
-                        <p class="section-title text-white h5 mb-4">Address<span></span></p>
-                        <p><i class="fa fa-map-marker-alt me-3"></i>6A - Sohail Shaheed Road Adil Town Bahawalpur</p>
-                        <p><i class="fa fa-phone-alt me-3"></i>+92 300 6616622</p>
-                        <p><i class="fa fa-envelope me-3"></i>info@topgradesoftware.com</p>
-                        <div class="d-flex pt-2">
-                            <!-- <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a> -->
-                            <a class="btn btn-outline-light btn-social" target="_blank"
-                                href="http://facebook.com/profile.php?id=61572433876159"><i
-                                    class="fab fa-facebook-f"></i></a>
-                            <!-- <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a> -->
-                            <!-- <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a> -->
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <p class="section-title text-white h5 mb-4">Quick Link<span></span></p>
-                        <a class="btn btn-link" href="index.html">Home</a>
-                        <a class="btn btn-link" href="features.html">Features</a>
-                        <a class="btn btn-link" href="pricing.html">Pricing</a>
-                        <a class="btn btn-link" href="faq.html">FAQ</a>
-                        <a class="btn btn-link" href="contact.html">Contact</a>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <p class="section-title text-white h5 mb-4">Gallery<span></span></p>
-                        <div class="row g-2">
-                            <div class="col-4">
-                                <img class="img-fluid" src="img/portfolio-1.jpg" alt="Image">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid" src="img/portfolio-2.jpg" alt="Image">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid" src="img/portfolio-3.jpg" alt="Image">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid" src="img/portfolio-4.jpg" alt="Image">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid" src="img/portfolio-5.jpg" alt="Image">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid" src="img/portfolio-6.jpg" alt="Image">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <p class="section-title text-white h5 mb-4">Newsletter<span></span></p>
-                        <p>Subscribe Us For More Information</p>
-                        <div class="position-relative w-100 mt-3">
-                            <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text"
-                                placeholder="Your Email" style="height: 48px;">
-                            <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
-                                    class="fa fa-paper-plane text-primary fs-4"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container px-lg-5">
-                <div class="copyright">
-                    <div class="row">
-                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="/">TopGrade Software</a>, All Right Reserved.
-                            Designed By <a class="border-bottom" href="https://alisiddiqui.tech">Ali Siddiqui</a>
-                        </div>
-                        <!-- <div class="col-md-6 text-center text-md-end">
-                            <div class="footer-menu">
-                                <a href="">Home</a>
-                                <a href="">Cookies</a>
-                                <a href="">Help</a>
-                                <a href="">FQAs</a>
-                            </div>
-                        </div> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Footer End -->
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/counterup/counterup.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/isotope/isotope.pkgd.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
 
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-    </div>
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
 </body>
 
 </html>

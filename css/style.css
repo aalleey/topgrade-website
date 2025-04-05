@@ -215,13 +215,13 @@ h6,
 .hero-header {
     margin-bottom: 6rem;
     padding: 18rem 0;
-    background:
+    /* background:
         url(../img/blob-top-left.png),
         url(../img/blob-top-right.png),
         url(../img/blob-bottom-left.png),
         url(../img/blob-bottom-right.png),
         url(../img/blob-center.png),
-        url(../img/bg-bottom.png);
+        url(../img/bg-bottom.png); */
     background-position:
         left 0px top 0px,
         right 0px top 0px,
@@ -532,9 +532,9 @@ h6,
 .footer {
     margin-top: 6rem;
     padding-top: 9rem;
-    background:
+    /* background:
         url(../img/bg-top.png),
-        url(../img/map.png);
+        url(../img/map.png); */
     background-position:
         center top,
         center center;
