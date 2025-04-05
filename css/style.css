@@ -213,7 +213,7 @@ h6,
 
 /*** Hero Header ***/
 .hero-header {
-    margin-bottom: 6rem;
+    /* margin-bottom: 6rem; */
     padding: 18rem 0;
     /* background:
         url(../img/blob-top-left.png),
@@ -530,7 +530,7 @@ h6,
 
 /*** Footer ***/
 .footer {
-    margin-top: 6rem;
+    /* margin-top: 6rem; */
     padding-top: 9rem;
     /* background:
         url(../img/bg-top.png),
