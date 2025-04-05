@@ -31,9 +31,23 @@
             --light-purple: #e9ecef;
         }
 
+        body {
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .container-xxl {
+            max-width: 100% !important;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
         .faq-section {
             padding: 80px 0;
-            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--secondary-purple) 100%);
+            background:#6222CC;
+            width: 100%;
+            overflow: hidden;
         }
 
         .faq-card {
@@ -42,6 +56,7 @@
             margin-bottom: 20px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
+            width: 100%;
         }
 
         .faq-card:hover {
@@ -91,8 +106,9 @@
         }
 
         .faq-search {
-            max-width: 600px;
+            max-width: 100%;
             margin: 0 auto 50px;
+            padding: 0 2rem;
         }
 
         .faq-search .form-control {
@@ -114,6 +130,37 @@
             box-shadow: none;
         }
 
+        /* Responsive padding for different screen sizes */
+        @media (min-width: 1400px) {
+            .container-xxl {
+                padding-left: 3rem;
+                padding-right: 3rem;
+            }
+            .faq-search {
+                padding: 0 3rem;
+            }
+        }
+
+        @media (min-width: 1600px) {
+            .container-xxl {
+                padding-left: 4rem;
+                padding-right: 4rem;
+            }
+            .faq-search {
+                padding: 0 4rem;
+            }
+        }
+
+        @media (min-width: 1920px) {
+            .container-xxl {
+                padding-left: 5rem;
+                padding-right: 5rem;
+            }
+            .faq-search {
+                padding: 0 5rem;
+            }
+        }
+
         @media (max-width: 768px) {
             .faq-section {
                 padding: 40px 0;
@@ -130,6 +177,46 @@
             .faq-header h3 {
                 font-size: 1rem;
             }
+
+            .container-xxl {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+
+        /* Ensure proper spacing for FAQ cards */
+        .accordion {
+            width: 100%;
+            max-width: 100%;
+            padding: 0 2rem;
+        }
+
+        @media (min-width: 1400px) {
+            .accordion {
+                padding: 0 3rem;
+            }
+        }
+
+        @media (min-width: 1600px) {
+            .accordion {
+                padding: 0 4rem;
+            }
+        }
+
+        @media (min-width: 1920px) {
+            .accordion {
+                padding: 0 5rem;
+            }
+        }
+
+        /* Footer adjustments */
+        .footer {
+            width: 100%;
+            margin: 0;
+        }
+
+        .footer .container {
+            max-width: 100%;
         }
     </style>
 </head>
@@ -166,7 +253,7 @@
             </nav>
 
             <div class="container-xxl py-5 bg-primary hero-header">
-                <div class="container my-5 py-5 px-lg-5">
+                <div class="container-xxl my-5 py-5 px-lg-5">
                     <div class="row g-5 py-5">
                         <div class="col-12 text-center">
                             <h1 class="text-white animated slideInDown">Frequently Asked Questions</h1>
@@ -186,7 +273,7 @@
 
         <!-- FAQ Section Start -->
         <div class="faq-section">
-            <div class="container">
+            <div class="container-xxl">
                 <div class="faq-search">
                     <input type="text" class="form-control" placeholder="Search for your question...">
                 </div>
@@ -310,7 +397,7 @@
 
         <!-- Footer Start -->
         <div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
-            <div class="container py-5 px-lg-5">
+            <div class="container-xxl py-5 px-lg-5">
                 <div class="row g-5">
                     <div class="col-md-6 col-lg-3">
                         <p class="section-title text-white h5 mb-4">Address<span></span></p>
@@ -369,7 +456,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container px-lg-5">
+            <div class="container-xxl px-lg-5">
                 <div class="copyright">
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
