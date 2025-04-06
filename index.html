@@ -73,6 +73,7 @@
             max-width: 100% !important;
             padding-left: 2rem;
             padding-right: 2rem;
+            margin-top: 2rem;
         }
 
         /* Responsive padding for different screen sizes */
@@ -200,6 +201,31 @@
             </div>
         </div>
         <!-- Spinner End -->
+
+        <!-- Welcome Modal -->
+        <div class="modal fade" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeModalLabel" aria-hidden="true" data-bs-backdrop="static">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content">
+                    <div class="modal-header border-0">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" data-bs-dismiss="modal">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-12 col-md-8 col-lg-6 text-center">
+                                    <img src="img/modal-image.jpg" alt="Modal image" class="img-fluid mb-4 rounded" style="max-width: 100%; height: auto;">
+                                    <div class="mt-4">
+                                        <button type="button" class="btn btn-primary btn-lg px-4 py-2 rounded-pill" data-bs-dismiss="modal">
+                                            Close
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
         <!-- Navbar & Hero Start -->
@@ -635,14 +661,15 @@
 
 
         <!-- Projects Start -->
-        <div class="container-fluid py-5">
-            <div class="container-fluid py-5 px-lg-5">
+        <!-- Projects Start -->
+        <div class="container-xxl py-5">
+            <div class="container py-5 px-lg-5">
                 <div class="wow fadeInUp" data-wow-delay="0.1s">
                     <p class="section-title text-secondary justify-content-center"><span></span>Our
                         Services<span></span></p>
                     <h1 class="text-center mb-5">What Solutions We Provide</h1>
                 </div>
-                <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="col-12 text-center">
                         <ul class="list-inline mb-5" id="portfolio-flters">
                             <li class="mx-2 active" data-filter="*">All</li>
@@ -762,10 +789,9 @@
         </div>
         <!-- Projects End -->
 
-
         <!-- Testimonial Start -->
-        <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="container-fluid py-5 px-lg-5">
+        <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="container py-5 px-lg-5">
                 <p class="section-title text-secondary justify-content-center"><span></span>Testimonial<span></span></p>
                 <h1 class="text-center mb-5">What Say Our Clients!</h1>
                 <div class="owl-carousel testimonial-carousel">
@@ -798,7 +824,7 @@
                         </div>
                     </div>
                     <div class="testimonial-item bg-light rounded my-4">
-                        <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>We've been using TopGrade's school management system for over a year now and it has completely transformed how we operate. The software is intuitive, reliable and their support team is always there when we need them. It has helped us streamline our administrative tasks and improve communication with parents.</p>
+                        <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>We've been using TopGrade's school management system for over a year now and it has completely transformed how we operate.</p>
                         <div class="d-flex align-items-center">
                             <img class="img-fluid flex-shrink-0 rounded-circle" src="img/city-school-logo.png"
                                 style="width: 65px; height: 65px;">
@@ -985,31 +1011,7 @@
             </div>
         </div>
         <!-- Footer End -->
-        <!-- Welcome Modal -->
-        <div class="modal fade" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-fullscreen">
-                <div class="modal-content">
-                    <div class="modal-header border-0">
-                        <!-- <h5 class="modal-title" id="welcomeModalLabel">Welcome to TopGrade Software</h5> -->
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-12 col-md-8 col-lg-6 text-center">
-                                    <img src="img/modal-image.jpg" alt="Modal image" class="img-fluid mb-4 rounded" style="max-width: 100%; height: auto;">
-                                    <!-- <div class="mt-4">
-                                        <button type="button" class="btn btn-light btn-lg px-4 py-2 rounded-pill" data-bs-dismiss="modal">
-                                            Get Started
-                                        </button>
-                                    </div> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
 
         <!-- Back to Top -->
         <!-- <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a> -->
@@ -1029,17 +1031,22 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     <script>
-         // Show welcome modal after page load
-         // Check if user has visited before
-    
-             const welcomeModal = new bootstrap.Modal(document.getElementById('welcomeModal'), {
-                backdrop: 'static',
-                keyboard: false
-             });
-             
-             window.addEventListener('load', function() {
-                welcomeModal.show();
-             });
+        // Show welcome modal after page load
+        const welcomeModal = new bootstrap.Modal(document.getElementById('welcomeModal'), {
+            backdrop: true,
+            keyboard: true
+        });
+        
+        window.addEventListener('load', function() {
+            welcomeModal.show();
+        });
+
+        // Add click event to close modal when clicking anywhere
+        document.getElementById('welcomeModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                welcomeModal.hide();
+            }
+        });
     </script>
 </body>
 
