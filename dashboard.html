@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | TopGradeSoftware</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --sidebar-width: 280px;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            min-height: 100vh;
+        }
+
+        .dashboard-container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: var(--sidebar-width);
+            background: var(--bg-card);
+            border-right: 1px solid var(--border-light);
+            color: var(--white);
+            padding: 2rem 0;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            height: 100vh;
+            left: 0;
+            top: 0;
+            z-index: 100;
+        }
+
+        .sidebar-header {
+            padding: 0 1.5rem 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sidebar-brand {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--white);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .sidebar-brand span {
+            color: var(--accent-blue);
+        }
+
+        .nav-menu {
+            list-style: none;
+            padding: 1.5rem 0;
+            flex-grow: 1;
+        }
+
+        .nav-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 0.8rem 1.5rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+            border-left: 4px solid transparent;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--white);
+            background: rgba(255, 255, 255, 0.05);
+            border-left-color: var(--accent-blue);
+        }
+
+        .nav-link i {
+            width: 24px;
+            margin-right: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .sidebar-footer {
+            padding: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--btn-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .stat-card h3 {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card .value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            margin-left: var(--sidebar-width);
+            padding: 2rem;
+            background-color: var(--bg-body);
+        }
+
+        .top-bar {
+            background: var(--bg-card);
+            padding: 1rem 2rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .page-title h1 {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 0;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .stat-info h3 {
+            font-size: 1.8rem;
+            color: var(--accent);
+            margin-bottom: 0.2rem;
+        }
+
+        .stat-info p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .welcome-card {
+            background: var(--btn-gradient);
+            color: var(--white);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(33, 150, 243, 0.2);
+        }
+
+        .welcome-card::before {
+            content: '';
+            position: absolute;
+            right: -50px;
+            top: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .welcome-content h2 {
+            color: var(--white);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .welcome-content p {
+            opacity: 1;
+            max-width: 600px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .sidebar.active {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-grid animate-grid"></div>
+    <div class="particles-container"></div>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="sidebar-brand">TopGrade<span>Software</span></a>
+            </div>
+
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="dashboard.html" class="nav-link active">
+                        <i class="fas fa-th-large"></i> Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="my-software.html" class="nav-link">
+                        <i class="fas fa-box"></i> My Software
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="invoices.html" class="nav-link">
+                        <i class="fas fa-file-invoice"></i> Invoices
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="account-settings.html" class="nav-link">
+                        <i class="fas fa-user-cog"></i> Account Settings
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" id="theme-manager-link">
+                        <i class="fas fa-palette"></i> Theme Manager
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="support.html" class="nav-link">
+                        <i class="fas fa-headset"></i> Support
+                    </a>
+                </li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">AD</div>
+                    <div class="user-details">
+                        <h4>Admin User</h4>
+                        <p>admin@topgrade.com</p>
+                    </div>
+                </div>
+                <a href="login.html" class="btn btn-secondary-outline btn-block" style="justify-content: center;">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="top-bar">
+                <div class="page-title">
+                    <h1 id="view-title">Overview</h1>
+                </div>
+                <div class="actions">
+                    <button class="btn btn-primary btn-sm">
+                        <i class="fas fa-plus"></i> New Request
+                    </button>
+                    <!-- Mobile Menu Trigger -->
+                    <button class="btn btn-sm btn-white mobile-only" style="display:none; margin-left:1rem;">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Theme Manager Section (Hidden by Default) -->
+            <div id="theme-manager-section" style="display: none;">
+                <div style="display: flex; flex-direction: column; gap: 2rem;">
+                    <!-- Theme List Grid -->
+                    <div class="stat-card" style="display: block; padding: 2.5rem;">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                            <div>
+                                <h3 style="color: var(--accent); margin: 0;">Professional Themes</h3>
+                                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Select from
+                                    14 pre-designed enterprise themes.</p>
+                            </div>
+                            <button class="btn btn-secondary-outline btn-sm"
+                                onclick="document.getElementById('theme-editor-form-container').scrollIntoView({behavior: 'smooth'})">
+                                <i class="fas fa-magic"></i> Custom Theme
+                            </button>
+                        </div>
+
+                        <div id="theme-list">
+                            <!-- Themes will be injected here as a grid -->
+                        </div>
+                    </div>
+
+                    <!-- Theme Editor Section -->
+                    <div id="theme-editor-form-container" class="stat-card" style="display: block; padding: 2.5rem;">
+                        <h3 style="color: var(--accent); margin-bottom: 2rem;" id="editor-title">Custom Theme Builder
+                        </h3>
+                        <form id="theme-editor-form">
+                            <div>
+                                <div class="form-group">
+                                    <label
+                                        style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-muted);">Primary
+                                        Color</label>
+                                    <input type="color" id="color-primary"
+                                        style="width: 100%; height: 40px; border: none; border-radius: 8px; cursor: pointer;">
+                                </div>
+                                <div class="form-group">
+                                    <label
+                                        style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-muted);">Accent
+                                        Color</label>
+                                    <input type="color" id="color-accent"
+                                        style="width: 100%; height: 40px; border: none; border-radius: 8px; cursor: pointer;">
+                                </div>
+                                <div class="form-group">
+                                    <label
+                                        style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-muted);">Background</label>
+                                    <input type="color" id="color-bg"
+                                        style="width: 100%; height: 40px; border: none; border-radius: 8px; cursor: pointer;">
+                                </div>
+                                <div class="form-group">
+                                    <label
+                                        style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-muted);">Card
+                                        BG</label>
+                                    <input type="color" id="color-card"
+                                        style="width: 100%; height: 40px; border: none; border-radius: 8px; cursor: pointer;">
+                                </div>
+                                <div class="form-group">
+                                    <label
+                                        style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-muted);">Border
+                                        Radius</label>
+                                    <select id="style-radius"
+                                        style="width: 100%; padding: 0.5rem; border-radius: 8px; border: 1px solid var(--border-light); background: var(--bg-body); color: var(--text-main);">
+                                        <option value="0px">Square (0px)</option>
+                                        <option value="8px">Soft (8px)</option>
+                                        <option value="16px" selected>Rounded (16px)</option>
+                                        <option value="24px">Extra Rounded (24px)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label
+                                        style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-muted);">Mode
+                                        Base</label>
+                                    <select id="style-base"
+                                        style="width: 100%; padding: 0.5rem; border-radius: 8px; border: 1px solid var(--border-light); background: var(--bg-body); color: var(--text-main);">
+                                        <option value="dark">Dark Mode</option>
+                                        <option value="light">Light Mode</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div style="margin-top: 2rem; display: flex; gap: 1rem;">
+                                <button type="button" class="btn btn-primary btn-sm" style="flex: 1;"
+                                    onclick="saveTheme()">Save Theme</button>
+                                <button type="button" class="btn btn-secondary-outline btn-sm" style="flex: 1;"
+                                    onclick="exportTheme()">Export JSON</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Overview Content (Wrap existing) -->
+            <div id="overview-section">
+                <!-- Welcome Banner -->
+                <div class="welcome-card">
+                    <div class="welcome-content">
+                        <h2>Welcome back, Mr. User 👋</h2>
+                        <p>Here's what's happening with your account today.</p>
+                    </div>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="dashboard-grid">
+                    <div class="stat-card glass-panel fade-in-up">
+                        <div class="stat-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Active</h3>
+                            <p>Account Status</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card glass-panel fade-in-up" style="animation-delay: 0.2s;">
+                        <div class="stat-icon" style="background: rgba(255, 82, 82, 0.1); color: #ff5252;">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>12 Days</h3>
+                            <p>Subscription Left</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card glass-panel fade-in-up" style="animation-delay: 0.4s;">
+                        <div class="stat-icon" style="background: rgba(76, 175, 80, 0.1); color: #4CAF50;">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Online</h3>
+                            <p>Support Status</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Support Section -->
+                <div style="margin-top: 3rem;">
+                    <h3 style="margin-bottom: 1.5rem; color: var(--accent);">Need Assistance?</h3>
+                    <div class="stat-card" style="display: block;">
+                        <p style="margin-bottom: 1rem;">Our support team is available 24/7 to help you with any issues.
+                        </p>
+                        <div style="display: flex; gap: 1rem;">
+                            <a href="https://wa.me/923006616622" target="_blank" class="btn btn-primary btn-sm">
+                                <i class="fab fa-whatsapp"></i> Chat Support
+                            </a>
+                            <a href="mailto:support@topgrade.com?subject=Support%20Request%20–%20TopGradeSoftware"
+                                class="btn btn-secondary-outline btn-sm">
+                                <i class="fas fa-envelope"></i> Email Support
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Floating Action Button -->
+    <button class="glass-panel" style="
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--accent);
+        color: var(--accent);
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 1000;
+        box-shadow: 0 0 20px var(--glow-cyan);
+        border: none;
+        transition: var(--transition-smooth);
+    " onmouseover="this.style.transform='scale(1.1) rotate(90deg)'"
+        onmouseout="this.style.transform='scale(1) rotate(0deg)'">
+        <i class="fas fa-plus"></i>
+    </button>
+    <script src="theme-manager.js"></script>
+    <script>
+        // Dashboard View Controller
+        const themeLink = document.getElementById('theme-manager-link');
+        const overviewSection = document.getElementById('overview-section');
+        const themeSection = document.getElementById('theme-manager-section');
+        const viewTitle = document.getElementById('view-title');
+
+        themeLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            overviewSection.style.display = 'none';
+            themeSection.style.display = 'block';
+            viewTitle.innerText = 'Theme Manager';
+
+            // Remove active class from all links
+            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+            themeLink.classList.add('active');
+
+            renderThemeList();
+        });
+
+        // Theme Manager UI Logic
+        function renderThemeList() {
+            const list = document.getElementById('theme-list');
+            const customThemes = JSON.parse(localStorage.getItem('customThemes') || '[]');
+            const allThemes = [...ThemeManager.defaultThemes, ...customThemes];
+            const activeId = localStorage.getItem('activeThemeId') || 'dark-blue';
+
+            list.style.display = 'grid';
+            list.style.gridTemplateColumns = 'repeat(auto-fill, minmax(220px, 1fr))';
+            list.style.gap = '1.5rem';
+
+            list.innerHTML = allThemes.map(theme => `
+                <div class="theme-card" style="
+                    background: ${theme.colors.bgCard}; 
+                    border: 2px solid ${theme.id === activeId ? 'var(--accent)' : 'var(--border-light)'}; 
+                    padding: 1.5rem; 
+                    border-radius: var(--radius-lg); 
+                    transition: var(--transition-smooth);
+                    position: relative;
+                    cursor: pointer;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                    box-shadow: ${theme.id === activeId ? 'var(--shadow-glow)' : 'var(--shadow-md)'};
+                " onclick="activateTheme('${theme.id}')">
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: start;">
+                        <h4 style="margin: 0; font-size: 1rem; color: ${theme.colors.textMain};">${theme.name}</h4>
+                        ${theme.id === activeId ? '<i class="fas fa-check-circle" style="color: var(--accent);"></i>' : ''}
+                    </div>
+
+                    <div style="display: flex; gap: 0.5rem; margin-top: auto;">
+                        <div title="Background" style="width: 24px; height: 24px; border-radius: 4px; background: ${theme.colors.primary}; border: 1px solid rgba(255,255,255,0.1);"></div>
+                        <div title="Accent" style="width: 24px; height: 24px; border-radius: 4px; background: ${theme.colors.accent};"></div>
+                        <div title="Card" style="width: 24px; height: 24px; border-radius: 4px; background: ${theme.colors.bgCard}; border: 1px solid rgba(255,255,255,0.1);"></div>
+                    </div>
+
+                    <button class="btn btn-primary btn-sm" style="width: 100%; font-size: 0.8rem; margin-top: 0.5rem;">
+                        ${theme.id === activeId ? 'Active' : 'Apply Theme'}
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        function activateTheme(id) {
+            localStorage.setItem('activeThemeId', id);
+            ThemeManager.loadActiveTheme();
+            renderThemeList();
+        }
+
+        function saveTheme() {
+            const newTheme = {
+                id: 'theme-' + Date.now(),
+                name: 'Custom Theme ' + new Date().toLocaleDateString(),
+                base: document.getElementById('style-base').value,
+                colors: {
+                    primary: document.getElementById('color-primary').value,
+                    secondary: document.getElementById('color-bg').value,
+                    accent: document.getElementById('color-accent').value,
+                    accentHover: document.getElementById('color-accent').value,
+                    bgCard: document.getElementById('color-card').value,
+                    textMain: document.getElementById('style-base').value === 'dark' ? '#f8fafc' : '#0f172a',
+                    textMuted: document.getElementById('style-base').value === 'dark' ? '#94a3b8' : '#64748b'
+                },
+                styles: {
+                    radius: document.getElementById('style-radius').value,
+                    shadowIntensity: '0.4'
+                }
+            };
+
+            const customThemes = JSON.parse(localStorage.getItem('customThemes') || '[]');
+            customThemes.push(newTheme);
+            localStorage.setItem('customThemes', JSON.stringify(customThemes));
+            activateTheme(newTheme.id);
+            alert('New Theme Created & Applied!');
+        }
+
+        function exportTheme() {
+            const activeId = localStorage.getItem('activeThemeId') || 'default-navy';
+            const customThemes = JSON.parse(localStorage.getItem('customThemes') || '[]');
+            const allThemes = [...ThemeManager.defaultThemes, ...customThemes];
+            const theme = allThemes.find(t => t.id === activeId);
+
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(theme, null, 2));
+            const downloadAnchorNode = document.createElement('a');
+            downloadAnchorNode.setAttribute("href", dataStr);
+            downloadAnchorNode.setAttribute("download", "theme-config.json");
+            document.body.appendChild(downloadAnchorNode);
+            downloadAnchorNode.click();
+            downloadAnchorNode.remove();
+        }
+    </script>
+    <script src="navbar-component.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

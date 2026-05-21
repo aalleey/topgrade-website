@@ -1,0 +1,50 @@
+Languages and Technologies used in TopGradeSoftware Website:
+
+1. HTML5: Used for the structural foundation of all platform pages (index.html, pos.html, sale.html, etc.).
+2. CSS3 (Vanilla CSS): Used for the high-end, premium design system, including custom theme variables, animations, and responsive layouts.
+3. JavaScript (ES6+): Used for dynamic theme management, reusable UI components (footer-component.js), and interactive client-side logic.
+4. Markdown: Used for documentation (README.md).
+
+--------------------------------------------------
+PROJECT FILE STRUCTURE
+--------------------------------------------------
+/root
+│   index.html              # Main Landing Page (Hero, Solutions, About)
+│   sale.html               # Enterprise Solutions Hub & Live Demo Booking
+│   pos.html                # POS Software Details
+│   hospital-management.html # Hospital & Clinic Solution Details
+│   pharmacy-management.html # Pharmacy Billing Software Details
+│   restaurant-management.html # Restaurant & Cafe System Details
+│   real-estate-management.html # Real Estate CRM Details
+│   hotel-management.html   # Hotel & Hospitality System Details
+│   college-management.html # Education & College System Details
+│   whatsapp-marketing.html # WhatsApp Automation Tool Details
+│   school.html             # School Management Specific Details
+│   boutique-management.html # Boutique & Fashion Retail Details
+│   leather-management.html # Leather Trading Logic Details
+│   online-shopping.html    # E-Commerce & Online Store Details
+│   print-marketing.html    # Printing & Marketing Services Details
+│   contact.html            # Contact Form & Lead Generation
+│   login.html              # User Authentication Portal
+│   dashboard.html          # Dynamic Theme Management Dashboard
+│   style.css               # Unified Design System (Premium White & Dark)
+│   theme-manager.js        # Core Theme Injection & State Engine
+│   main.js                 # Global Animations & Interaction Logic
+│   footer-component.js     # Reusable Footer Script
+│   languages_used.txt      # Technology & Structure Summary (This File)
+└───images/                 # High-Definition Visual Assets & Graphics
+
+--------------------------------------------------
+PAGE DETAILS
+--------------------------------------------------
+• Home (index.html): Central gateway showcasing overall capabilities, brand identity, and featured software solutions.
+• Solutions Hub (sale.html): Comprehensive listing of all enterprise software with pricing tiers and a lead conversion demo form.
+• Themed Dashboard (dashboard.html): Allows live testing and switching between 10+ premium themes (Cybernova, Midnight, Sunset, etc.).
+• Industry Pages: Specialized pages for each vertical (POS, Hospital, etc.) highlighting niche features and business benefits.
+• Theme Manager: Centralized system responsible for the "Premium White" redesign and high-contrast accessibility.
+
+Architecture Notes:
+- Theme Engine: JavaScript-based CSS variable injector for real-time brand switching.
+- Component System: Modular scripts for maintaining site-wide consistency (e.g. Footer).
+- Modern Design: Implements glassmorphism, depth layers, and theme-aware shadows.
+
