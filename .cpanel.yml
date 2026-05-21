@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=$HOME/public_html/
+    - export DEPLOYPATH=/home/seekkfoq/topgradesoftwarehouse.com/
     - /bin/cp -R * $DEPLOYPATH
